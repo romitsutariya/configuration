@@ -1,9 +1,15 @@
 public class GCTest {
 	public static void main(String[] args) throws InterruptedException {
 		A a = new A("white");
-		a = null;
  
-		Runtime.getRuntime().gc();
+		for (int i = 0; i < 10000000; i++) {
+			if (i % 2 == 1) {
+				a = new A("red");
+			} else {
+				a = new A("green");
+			}
+			a = null;
+		}
 	}
 }
  
