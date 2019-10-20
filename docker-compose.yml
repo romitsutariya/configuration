@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  webapp:
+    image: romitsutariya/springapp:1.1
+    ports:
+      - "80:8080"
+    networks:
+      - back-tier
+    depends_on:
+      - mysqldb   
+  euraka:
+    image: romitsutariya/euraka_server:1.0
+    ports:
+      - "8761:8761"
+    networks:
+      - back-tier  
+  mysqldb:
+    image: romitsutariya/mysql_spring:1.0
+    networks:
+      - back-tier
+
+volumes:
+  db-data:
+
+networks:
+  back-tier:
