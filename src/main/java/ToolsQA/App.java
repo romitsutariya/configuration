@@ -18,7 +18,7 @@ public class App
  
         Session session = null;
         session = HibernateUtil.getSession();
-        String queryStr = "select emp from Employee emp";
+       // String queryStr = "select emp from Employee emp";
         Query query = session.createQuery(queryStr);
  
         return query.list();
