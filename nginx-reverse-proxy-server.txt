@@ -1,1 +1,17 @@
 docker run -p 8080:80 katacoda/docker-http-server   //to start server in diff port
+docker run -d --name server-1 -p 8081:80 katacoda/docker-http-server
+docker run -d --name server-2 -p 8082:80 katacoda/docker-http-server 
+docker run -d --name server-3 -p 8083:80 katacoda/docker-http-server
+cd /etc/nginx/sites-available/
+
+server {
+
+listen 80;
+
+location / {
+
+proxy_pass http://my_server;
+
+}
+
+}
