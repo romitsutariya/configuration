@@ -24,3 +24,11 @@ server my.server1.com weight=3;
 server my.server2.com;
 
 }
+
+################################################################
+Getting Started
+Ensure your computer is behind a firewall that blocks port 4040 then,
+
+sudo curl -L git.io/scope -o /usr/local/bin/scope
+sudo chmod a+x /usr/local/bin/scope
+scope launch
