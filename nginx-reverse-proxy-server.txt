@@ -15,3 +15,12 @@ proxy_pass http://my_server;
 }
 
 }
+
+//proxy server details
+upstream server_group   {
+
+server my.server1.com weight=3;
+
+server my.server2.com;
+
+}
